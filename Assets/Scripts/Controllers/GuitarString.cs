@@ -7,9 +7,15 @@ public class GuitarString : MonoBehaviour
 {
     public AudioSource audioSource;
 
-    public AudioClip sound;
+    public AudioClip open;
+
+    public AudioClip[] frets;
 
     public LineRenderer lineRenderer;
+
+    public Transform spawn;
+
+    public Transform spawnFlip;
 
     public int points;
 
@@ -30,18 +36,27 @@ public class GuitarString : MonoBehaviour
 
     public const float Tau = 2 * Mathf.PI;
 
-    public void PlayString()
-    {
-        PlaySound();
-
+    public void Animate()
+    {        
         StartCoroutine(AnimateStringCoroutine());
     }
 
-    public void PlaySound()
+    public void PlayOpen()
     {
-        audioSource.clip = sound;
+        audioSource.clip = open;
 
         audioSource.Play();
+
+        Animate();
+    }
+
+    public void PlayFret()
+    {
+        audioSource.clip = frets[Random.Range(0, frets.Length)];
+
+        audioSource.Play();
+
+        Animate();
     }
 
     public IEnumerator AnimateStringCoroutine()
@@ -81,5 +96,10 @@ public class GuitarString : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    public Transform GetSpawn()
+    {
+        return Random.Range(0,2) == 1 ? spawn : spawnFlip;
     }
 }

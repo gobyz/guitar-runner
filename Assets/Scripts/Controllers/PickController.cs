@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class PickController : MonoBehaviour
 {
     public GameObject pickHolder;
 
     public GameObject pick;
+
+    public PickTrigger pickTrigger;
 
     public List<GuitarString> strings = new List<GuitarString>();
 
@@ -29,6 +32,10 @@ public class PickController : MonoBehaviour
     private void Start()
     {
         SetCurrentGuitarString(startStringIndex);
+
+        pickTrigger.triggerEntered.AddListener(PickOnTriggerEnter);
+
+        pickTrigger.triggerExited.AddListener(PickOnTriggerExit);
     }
     private void SetCurrentGuitarString(int index)
     {
@@ -118,7 +125,38 @@ public class PickController : MonoBehaviour
         isMoving = false;
     }
     public void PickString()
+    {    
+        if (pickTrigger.currentEntity != null)
+        {
+            if(pickTrigger.currentEntity is IPickable)
+            {
+                IPickable pickable = (IPickable)pickTrigger.currentEntity;
+
+                pickable.Pick();
+            }
+
+            strings[currentStringIndex].PlayFret();
+        }
+        else
+        {
+            strings[currentStringIndex].PlayOpen();
+        }     
+    }
+
+    public void PickOnTriggerEnter()
     {
-        strings[currentStringIndex].PlayString();
+        if (pickTrigger.currentEntity != null)
+        {
+            if (pickTrigger.currentEntity is IDamagable)
+            {
+                IDamagable damagable = (IDamagable)pickTrigger.currentEntity;
+
+                damagable.Damage();
+            }
+        }
+    }
+    public void PickOnTriggerExit()
+    {
+
     }
 }

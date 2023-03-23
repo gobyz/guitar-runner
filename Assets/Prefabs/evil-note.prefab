@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 772236144141385784}
   - component: {fileID: 3733978846455130425}
   - component: {fileID: 6858285247577446645}
+  - component: {fileID: 1223770930815858597}
+  - component: {fileID: 3145567296086585577}
   m_Layer: 0
   m_Name: evil-note
   m_TagString: Untagged
@@ -69,6 +71,35 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1223770930815858597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772236144141385790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a044ab7653b52754bb781c942d88d9e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAvailable: 0
+--- !u!58 &3145567296086585577
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772236144141385790}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.03}
+  serializedVersion: 2
+  m_Radius: 0.13866276
 --- !u!1 &2147598559911451892
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,39 +1,76 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SpawnController : MonoBehaviour
 {
-    public GameObject goodNote;
+    public List<Pool> pools = new List<Pool>();
 
-    public GameObject evilNote;
+    public GuitarString[] strings;
 
-    public Transform spawn;
+    private Transform spawn;
+
+    private GuitarString lastGoodNoteGuitarString;
 
     public void Spawn()
     {
         if (ShouldSpawn())
         {
-            Instantiate(GetRandomObject(), spawn);
+            GameObject go = GetRandomObject(GetRandomPool());
+
+            if(go != null)
+            {
+                go.transform.position = spawn.transform.position;
+
+                if (spawn.name.Contains("flip"))
+                {
+                    Vector3 scale = go.transform.localScale;
+
+                    go.transform.localScale = new Vector3(scale.x, -scale.y, scale.z);
+                }
+                go.SetActive(true);
+            }
         }    
     }
 
-    public GameObject GetRandomObject()
+    public GameObject GetRandomObject(Pool pool)
     {
-        int random = Random.Range(0, 2);
+        Entity e = pool.GetEntity();
 
-        GameObject result = new GameObject();
-
-        if(random == 0)
+        if (e == null)
         {
-            result = goodNote;
+            return null;
         }
-        else if(random == 1)
+        else
         {
-            result = evilNote;
+            e.isAvailable = false;
+        }
+        if (pool.prefab.GetComponent<Entity>() is GoodNote)
+        {        
+            if(lastGoodNoteGuitarString == null)
+            {
+                GuitarString gs = GetRandomString();
+
+                lastGoodNoteGuitarString = gs;
+
+                spawn = gs.GetSpawn();
+            }
+            else
+            {
+                GuitarString gs = GetCloseGuitarString(lastGoodNoteGuitarString);
+
+                spawn = gs.GetSpawn();
+
+                lastGoodNoteGuitarString = gs;
+            }
+        }
+        else if(pool.prefab.GetComponent<Entity>() is EvilNote)
+        {        
+            spawn = GetRandomString().GetSpawn();
         }
 
-        return result;
+        return e.gameObject;
     }
 
     public bool ShouldSpawn()
@@ -41,5 +78,33 @@ public class SpawnController : MonoBehaviour
         int randomRange = Random.Range(0, 5);
 
         return randomRange < 2 ? false : true;
+    }
+
+    public GuitarString GetRandomString()
+    {
+        return strings[Random.Range(0, strings.Length)];
+    }
+
+    public GuitarString GetCloseGuitarString(GuitarString gs)   //return 3 adjacent strings 
+    {
+        int index = strings.ToList().IndexOf(gs);
+
+        if (index == 0)
+        {
+            return strings[Random.Range(0, 2)];
+        }
+        else if(index == strings.Length - 1)
+        {
+            return strings[Random.Range(strings.Length - 2, strings.Length)];
+        }
+        else
+        {
+            return strings[Random.Range(index - 1, index + 2)];
+        }
+    }
+
+    public Pool GetRandomPool()
+    {
+        return pools[Random.Range(0, pools.Count)];
     }
 }
