@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GoodNote : Entity, IPickable
@@ -51,5 +50,30 @@ public class GoodNote : Entity, IPickable
         gameObject.SetActive(false);
 
         isAvailable = true;
+    }
+    public void FocusToGuitarString(GuitarString guitarString)
+    {
+        StartCoroutine(Jump(guitarString));
+    }
+    public IEnumerator Jump(GuitarString guitarString)
+    {
+        Vector2 scale = transform.localScale;
+
+        LeanTween.scale(gameObject, Vector2.zero, 0.2f).setEaseInCubic();
+
+        yield return new WaitForSeconds(0.2f);
+
+        if (isFlipped)
+        {
+            gameObject.transform.position = new Vector3(transform.position.x, guitarString.spawnDown.transform.position.y, 0);
+        }
+        else
+        {
+            gameObject.transform.position = new Vector3(transform.position.x, guitarString.spawnUp.transform.position.y, 0);
+        }
+
+        LeanTween.scale(gameObject, Vector2.one * scale, 0.2f).setEaseInCubic();
+
+        yield return new WaitForSeconds(0.2f);
     }
 }

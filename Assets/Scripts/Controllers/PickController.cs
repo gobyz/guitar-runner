@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using static UnityEngine.EventSystems.EventTrigger;
 
 public class PickController : MonoBehaviour
 {
+    public static PickController instance; 
+
     public GameObject pickHolder;
 
     public GameObject pick;
 
     public PickTrigger pickTrigger;
+
+    public SpriteRenderer pickSpriteRenderer;
 
     public List<GuitarString> strings = new List<GuitarString>();
 
@@ -31,6 +34,8 @@ public class PickController : MonoBehaviour
     public UnityEvent moveDown = new UnityEvent();
     private void Start()
     {
+        instance = this;
+
         SetCurrentGuitarString(startStringIndex);
 
         pickTrigger.triggerEntered.AddListener(PickOnTriggerEnter);
@@ -101,7 +106,6 @@ public class PickController : MonoBehaviour
     {
         StartCoroutine(AlternateCoroutine());
     }
-
     bool isPickDown = false;
     public IEnumerator AlternateCoroutine()
     {
@@ -124,8 +128,12 @@ public class PickController : MonoBehaviour
 
         isMoving = false;
     }
+
+    public Detach detach;
     public void PickString()
-    {    
+    {
+        detach.DetachAll();
+
         if (pickTrigger.currentEntity != null)
         {
             if(pickTrigger.currentEntity is IPickable)
@@ -142,7 +150,6 @@ public class PickController : MonoBehaviour
             strings[currentStringIndex].PlayOpen();
         }     
     }
-
     public void PickOnTriggerEnter()
     {
         if (pickTrigger.currentEntity != null)
@@ -153,10 +160,28 @@ public class PickController : MonoBehaviour
 
                 damagable.Damage();
             }
+            if(pickTrigger.currentEntity is EvilNote)
+            {
+                EvilNote evilNote = (EvilNote)pickTrigger.currentEntity;
+
+                evilNote.Detach();
+            }
         }
     }
     public void PickOnTriggerExit()
     {
-
+        
+    }
+    public GuitarString GetCurrentGuitarString()
+    {
+        return strings[currentStringIndex];
+    }
+    public void ImmunityEffectOn()
+    {
+        pickSpriteRenderer.color = pickSpriteRenderer.color * new Vector4(1,1,1,0.5f);
+    }
+    public void ImmunityEffectOff()
+    {
+        pickSpriteRenderer.color = new Vector4(pickSpriteRenderer.color.r, pickSpriteRenderer.color.g, pickSpriteRenderer.color.b, 1);
     }
 }

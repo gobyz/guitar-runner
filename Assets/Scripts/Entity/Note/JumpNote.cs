@@ -124,11 +124,11 @@ public class JumpNote : MonoBehaviour
 
         if (entity.isFlipped)
         {
-            gameObject.transform.position = new Vector3(transform.position.x, nextString.spawnFlip.transform.position.y, 0);
+            gameObject.transform.position = new Vector3(transform.position.x, nextString.spawnDown.transform.position.y, 0);
         }
         else
         {
-            gameObject.transform.position = new Vector3(transform.position.x, nextString.spawn.transform.position.y, 0);
+            gameObject.transform.position = new Vector3(transform.position.x, nextString.spawnUp.transform.position.y, 0);
         }
 
         LeanTween.scale(note, Vector2.one * scale, time).setEase(scaleCurve);
@@ -159,5 +159,12 @@ public class JumpNote : MonoBehaviour
         upIndicator.SetActive(false);
 
         downIndicator.SetActive(false);
+    }
+
+    public void SetToFinished()
+    {
+        jumpCount = maxJumps;
+
+        OnJumpFinished();
     }
 }

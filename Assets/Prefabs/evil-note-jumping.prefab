@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 772236144141385784}
-  - component: {fileID: 3733978846455130425}
   - component: {fileID: 6858285247577446645}
   - component: {fileID: 3145567296086585577}
   - component: {fileID: 1223770930815858597}
@@ -37,20 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3733978846455130425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 772236144141385790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9656f8aad74df654a8fda9817c1cb3dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 6858285247577446645}
-  velocity: {x: -90.2, y: 0}
 --- !u!50 &6858285247577446645
 Rigidbody2D:
   serializedVersion: 4
@@ -103,6 +88,11 @@ MonoBehaviour:
   isAvailable: 0
   isFlipped: 0
   guitarString: {fileID: 0}
+  damage: 2
+  startVelocity: {x: -90.2, y: 0}
+  velocity: {x: -90.2, y: 0}
+  rb: {fileID: 6858285247577446645}
+  circleCollider: {fileID: 3145567296086585577}
 --- !u!114 &2861129245565569205
 MonoBehaviour:
   m_ObjectHideFlags: 0

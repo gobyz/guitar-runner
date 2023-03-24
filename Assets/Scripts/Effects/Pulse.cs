@@ -10,6 +10,11 @@ public class Pulse : MonoBehaviour
 
     public float time;
 
+    private void Start()
+    {
+        AudioController.beat.AddListener(Play);
+    }
+
     public void Play()
     {
         gameObject.transform.localScale = Vector3.one * pulseScale;

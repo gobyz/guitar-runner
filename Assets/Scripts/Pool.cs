@@ -8,6 +8,8 @@ public class Pool : MonoBehaviour
 
     public List<Entity> entities = new List<Entity>();
 
+    public float spawnRate;
+
     public int size;
     private void Start()
     {

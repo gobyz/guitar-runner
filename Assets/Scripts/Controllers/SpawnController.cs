@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class SpawnController : MonoBehaviour
 {
+    public List<Pool> pools = new List<Pool>();
+
     public Pool goodNotesPool;
 
     public Pool evilNotesPool;
@@ -18,7 +20,6 @@ public class SpawnController : MonoBehaviour
     private Transform spawn;
 
     private GuitarString lastGoodNoteGuitarString;
-
     public void Spawn()
     {
         if (ShouldSpawn())
@@ -77,12 +78,21 @@ public class SpawnController : MonoBehaviour
 
                 lastGoodNoteGuitarString = gs;
             }
+
+            SetIsFlipped(e, spawn.name);
         }
         else if(pool.prefab.GetComponent<Entity>() is EvilNote)
         {
             gs = GetRandomString();
 
-            spawn = gs.GetSpawn();
+            spawn = gs.GetSpawn();        
+        }
+     
+        if (pool.prefab.GetComponent<Entity>() is Chord)
+        {
+            gs = GetRandomString();
+
+            spawn = gs.spawnCenter;
         }
 
         SetIsFlipped(e, spawn.name);
@@ -94,7 +104,7 @@ public class SpawnController : MonoBehaviour
 
     public void SetIsFlipped(Entity e, string spawnName)
     {
-        e.isFlipped = spawnName.Contains("flip") ? true : false;
+        e.isFlipped = spawnName.Contains("down") ? true : false;
     }
 
     public bool ShouldSpawn()
@@ -129,33 +139,63 @@ public class SpawnController : MonoBehaviour
 
     public Pool GetRandomPool()
     {
-        int random = Random.Range(0, 2);
+        Shuffle(pools);
 
-        if(random == 0)
+        for (int i = 0; i < pools.Count; i++)
         {
-            random = Random.Range(0, 5);
+            float rnd = Random.Range(0f, 1f);
 
-            if (random != 4) // 20% good jumping spawn
+            if(rnd < pools[i].spawnRate)
             {
-                return goodNotesPool;
-            }
-            else
-            {
-                return goodNotesJumpingPool;
+                return pools[i];
             }
         }
-        else
-        {
-            random = Random.Range(0, 5);
 
-            if(random != 4) // 20% evil jumping spawn
-            {
-                return evilNotesPool;
-            }
-            else
-            {
-                return evilNotesJumpingPool;
-            }
+        return GetRandomPool();
+    }
+
+    public static void Shuffle(List<Pool> list)
+    {
+        System.Random rng = new System.Random();
+        int n = list.Count;
+        while (n > 1)
+        {
+            n--;
+            int k = rng.Next(n + 1);
+            Pool value = list[k];
+            list[k] = list[n];
+            list[n] = value;
         }
     }
 }
+
+
+
+/*int random = Random.Range(0, 2);
+
+       if(random == 0)
+       {
+           random = Random.Range(0, 5);
+
+           if (random != 4) // 20% good jumping spawn
+           {
+               return goodNotesPool;
+           }
+           else
+           {
+               return goodNotesJumpingPool;
+           }
+       }
+       else
+       {
+           random = Random.Range(0, 5);
+
+           if(random != 4) // 20% evil jumping spawn
+           {
+               return evilNotesPool;
+           }
+           else
+           {
+               return evilNotesJumpingPool;
+           }
+       }*/

@@ -15,9 +15,11 @@ public class GuitarString : MonoBehaviour
 
     public LineRenderer lineRenderer;
 
-    public Transform spawn;
+    public Transform spawnUp;
 
-    public Transform spawnFlip;
+    public Transform spawnCenter;
+
+    public Transform spawnDown;
 
     public int points;
 
@@ -102,6 +104,6 @@ public class GuitarString : MonoBehaviour
 
     public Transform GetSpawn()
     {
-        return Random.Range(0,2) == 1 ? spawn : spawnFlip;
+        return Random.Range(0,2) == 1 ? spawnUp : spawnDown;
     }
 }
