@@ -12,6 +12,8 @@ public class AudioController : MonoBehaviour
 
     [SerializeField] private Intervals[] intervals;
 
+    public static UnityEvent beat = new UnityEvent();
+
     private void Update()
     {
         foreach(Intervals interval in intervals)
@@ -21,6 +23,12 @@ public class AudioController : MonoBehaviour
             interval.CheckForNewInterval(sampleTime);
         }
     }
+
+    public void Beat()
+    {
+        beat.Invoke();
+    }
+
 }
 
 [System.Serializable]

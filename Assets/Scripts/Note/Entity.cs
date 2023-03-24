@@ -6,5 +6,8 @@ public abstract class Entity : MonoBehaviour
 {
     public bool isAvailable;
 
+    public bool isFlipped;
+
+    public GuitarString guitarString;
     public abstract void MakeAvailable();
 }

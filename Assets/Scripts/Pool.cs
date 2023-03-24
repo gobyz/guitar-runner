@@ -42,4 +42,17 @@ public class Pool : MonoBehaviour
 
         return null;
     }
+
+    public bool IsPoolEmpty()
+    {
+        foreach (Entity e in entities)
+        {
+            if (e.isAvailable)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }

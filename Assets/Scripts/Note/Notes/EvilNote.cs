@@ -8,6 +8,7 @@ public class EvilNote : Entity, IDamagable
     {
         Debug.Log("AGGHH");
     }
+
     override
     public void MakeAvailable()
     {
@@ -18,3 +19,5 @@ public class EvilNote : Entity, IDamagable
         isAvailable = true;
     }
 }
+
+

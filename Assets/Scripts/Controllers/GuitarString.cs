@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class GuitarString : MonoBehaviour
 {
+    public int index;
+
     public AudioSource audioSource;
 
     public AudioClip open;

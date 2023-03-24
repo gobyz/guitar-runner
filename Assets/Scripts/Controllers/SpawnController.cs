@@ -5,7 +5,13 @@ using UnityEngine;
 
 public class SpawnController : MonoBehaviour
 {
-    public List<Pool> pools = new List<Pool>();
+    public Pool goodNotesPool;
+
+    public Pool evilNotesPool;
+
+    public Pool evilNotesJumpingPool;
+
+    public Pool goodNotesJumpingPool;
 
     public GuitarString[] strings;
 
@@ -17,13 +23,15 @@ public class SpawnController : MonoBehaviour
     {
         if (ShouldSpawn())
         {
-            GameObject go = GetRandomObject(GetRandomPool());
+            GameObject go = GetRandomObject(GetRandomPool());            
 
-            if(go != null)
+            if (go != null)
             {
+                Entity entity = go.GetComponent<Entity>();
+
                 go.transform.position = spawn.transform.position;
 
-                if (spawn.name.Contains("flip"))
+                if (entity.isFlipped)
                 {
                     Vector3 scale = go.transform.localScale;
 
@@ -36,21 +44,26 @@ public class SpawnController : MonoBehaviour
 
     public GameObject GetRandomObject(Pool pool)
     {
-        Entity e = pool.GetEntity();
+        Entity e;
 
-        if (e == null)
+        if (!pool.IsPoolEmpty())
         {
-            return null;
+             e = pool.GetEntity();
         }
         else
         {
-            e.isAvailable = false;
+            return null;
         }
+
+        GuitarString gs = null;
+
+        e.isAvailable = false;
+
         if (pool.prefab.GetComponent<Entity>() is GoodNote)
         {        
-            if(lastGoodNoteGuitarString == null)
+            if (lastGoodNoteGuitarString == null)
             {
-                GuitarString gs = GetRandomString();
+                gs = GetRandomString();
 
                 lastGoodNoteGuitarString = gs;
 
@@ -58,7 +71,7 @@ public class SpawnController : MonoBehaviour
             }
             else
             {
-                GuitarString gs = GetCloseGuitarString(lastGoodNoteGuitarString);
+                gs = GetCloseGuitarString(lastGoodNoteGuitarString);
 
                 spawn = gs.GetSpawn();
 
@@ -66,11 +79,22 @@ public class SpawnController : MonoBehaviour
             }
         }
         else if(pool.prefab.GetComponent<Entity>() is EvilNote)
-        {        
-            spawn = GetRandomString().GetSpawn();
+        {
+            gs = GetRandomString();
+
+            spawn = gs.GetSpawn();
         }
 
+        SetIsFlipped(e, spawn.name);
+
+        e.guitarString = gs;
+
         return e.gameObject;
+    }
+
+    public void SetIsFlipped(Entity e, string spawnName)
+    {
+        e.isFlipped = spawnName.Contains("flip") ? true : false;
     }
 
     public bool ShouldSpawn()
@@ -105,6 +129,33 @@ public class SpawnController : MonoBehaviour
 
     public Pool GetRandomPool()
     {
-        return pools[Random.Range(0, pools.Count)];
+        int random = Random.Range(0, 2);
+
+        if(random == 0)
+        {
+            random = Random.Range(0, 5);
+
+            if (random != 4) // 20% good jumping spawn
+            {
+                return goodNotesPool;
+            }
+            else
+            {
+                return goodNotesJumpingPool;
+            }
+        }
+        else
+        {
+            random = Random.Range(0, 5);
+
+            if(random != 4) // 20% evil jumping spawn
+            {
+                return evilNotesPool;
+            }
+            else
+            {
+                return evilNotesJumpingPool;
+            }
+        }
     }
 }
