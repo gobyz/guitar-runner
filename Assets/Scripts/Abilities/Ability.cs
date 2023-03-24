@@ -45,7 +45,7 @@ public abstract class Ability : MonoBehaviour
     {
         if (!abilityActivated)
         {
-            if(Input.GetKeyDown(keycode))
+            if(Input.GetKeyDown(keycode) && isAbilityLoaded)
             {
                 abilityActivated = true;
 

@@ -499,7 +499,7 @@ RectTransform:
   m_GameObject: {fileID: 204473587}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6894, y: 1.6894, z: 1.6894}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 283365673}
@@ -509,7 +509,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 25}
+  m_AnchoredPosition: {x: 0, y: 50}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &204473589
@@ -539,7 +539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fill: {fileID: 1151458080}
   loadingColor: {r: 0.54901963, g: 0.20000002, b: 0.27058825, a: 1}
-  availableColor: {r: 1, g: 0.89019614, b: 0, a: 1}
+  availableColor: {r: 0.92549026, g: 0.6627451, b: 0.63529414, a: 1}
   keyImage: {fileID: 2001559649}
 --- !u!1 &210711455
 GameObject:
@@ -1684,7 +1684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cc1d513740146141bc0c598237abf4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadBeats: 20
+  loadBeats: 70
   isAbilityLoaded: 0
   duration: 3
   keycode: 100
@@ -2111,7 +2111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a28724fe9f88b334994a98ec819d7041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadBeats: 10
+  loadBeats: 20
   isAbilityLoaded: 0
   duration: 3
   keycode: 113
@@ -2318,7 +2318,7 @@ RectTransform:
   m_GameObject: {fileID: 573037207}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6894, y: 1.6894, z: 1.6894}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 452377432}
@@ -2328,7 +2328,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 100, y: 25}
+  m_AnchoredPosition: {x: 168.94, y: 50}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &573037209
@@ -2358,7 +2358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fill: {fileID: 1737436516}
   loadingColor: {r: 0.54901963, g: 0.20000002, b: 0.27058825, a: 1}
-  availableColor: {r: 1, g: 0.89019614, b: 0, a: 1}
+  availableColor: {r: 0.92549026, g: 0.6627451, b: 0.63529414, a: 1}
   keyImage: {fileID: 301282183}
 --- !u!1 &586718148
 GameObject:
@@ -2818,7 +2818,7 @@ RectTransform:
   m_GameObject: {fileID: 643536342}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6894, y: 1.6894, z: 1.6894}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 694206603}
@@ -2828,7 +2828,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -100, y: 25}
+  m_AnchoredPosition: {x: -168.94, y: 50}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &643536344
@@ -2858,7 +2858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fill: {fileID: 1064179106}
   loadingColor: {r: 0.54901963, g: 0.20000002, b: 0.27058825, a: 1}
-  availableColor: {r: 1, g: 0.89019614, b: 0, a: 1}
+  availableColor: {r: 0.92549026, g: 0.6627451, b: 0.63529414, a: 1}
   keyImage: {fileID: 299717555}
 --- !u!1 &657348472
 GameObject:
@@ -3102,7 +3102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43063450aa48c9942852ae7eb76c7d5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadBeats: 15
+  loadBeats: 50
   isAbilityLoaded: 0
   duration: 0
   keycode: 101
@@ -9796,12 +9796,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
