@@ -10,4 +10,18 @@ public abstract class Entity : MonoBehaviour
 
     public GuitarString guitarString;
     public abstract void MakeAvailable();
+
+    public Vector2 startVelocity;
+
+    public Vector2 velocity;
+
+    public Rigidbody2D rb;
+    private void Start()
+    {
+        velocity = startVelocity;
+    }
+    private void FixedUpdate()
+    {
+        rb.velocity = velocity * Time.fixedDeltaTime;
+    }
 }

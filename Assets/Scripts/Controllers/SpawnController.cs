@@ -13,8 +13,18 @@ public class SpawnController : MonoBehaviour
 
     private GuitarString lastGoodNoteGuitarString;
 
+    private float difficulty;
     private void Start()
     {
+        if (DifficultyController.instance == null)
+        {
+            difficulty = 0.4f;
+        }
+        else
+        {
+            difficulty = DifficultyController.instance.currentDifficulty.difficulty;
+        }
+
         AudioController.beat.AddListener(Spawn);
     }
     public void Spawn()
@@ -127,9 +137,9 @@ public class SpawnController : MonoBehaviour
 
     public bool ShouldSpawn()
     {
-        int randomRange = Random.Range(0, 5);
+        float randomRange = Random.Range(0f, 1f);
 
-        return randomRange < 2 ? false : true;
+        return randomRange < difficulty ? true : false;
     }
 
     public GuitarString GetRandomString()

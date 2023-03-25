@@ -2,27 +2,12 @@ using System.Collections;
 using UnityEngine;
 
 public class GoodNote : Entity, IPickable
-{
-    public Vector2 startVelocity;
-
-    public Vector2 velocity;
-    
+{    
     public Animator animator;
-
-    public Rigidbody2D rb;
 
     public CircleCollider2D circleCollider;
 
     private bool picked;
-
-    private void Start()
-    {
-        velocity = startVelocity;
-    }
-    private void FixedUpdate()
-    {
-        rb.velocity = velocity * Time.fixedDeltaTime;
-    }
     public void OnPick()
     {
         velocity = Vector2.zero;

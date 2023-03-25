@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class Chord : Entity
 {
-    public Vector2 startVelocity;
-
-    public Vector2 velocity;
-
-    public Rigidbody2D rb;
-
     public List<ChordPart> chordParts = new List<ChordPart>();
 
     private int chordSize;
@@ -18,11 +12,6 @@ public class Chord : Entity
     private void OnEnable()
     {
         CreateChord();
-    }
-
-    private void Start()
-    {
-        velocity = startVelocity;
     }
 
     public void CreateChord()

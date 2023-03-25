@@ -8,6 +8,8 @@ public abstract class Ability : MonoBehaviour
 {
     public int loadBeats;
 
+    public int beatsActive;
+
     public bool isAbilityLoaded;
 
     public float duration;
@@ -24,23 +26,46 @@ public abstract class Ability : MonoBehaviour
         Load();
 
         AudioController.beat.AddListener(CheckLoading);
+
+        AudioController.beat.AddListener(CheckActive);
     }
     private bool shouldCheckLoading;
+
+    private bool shouldCheckActive;
     public void CheckLoading()
     {
         if (shouldCheckLoading)
         {
-            beatsLeft--;
+            beatsLeftLoad--;
 
-            abilityButton.Set(GetFillRatio());
+            abilityButton.Set(GetFillRatioLoad(), true);
 
-            if(beatsLeft== 0)
+            if(beatsLeftLoad== 0)
             {
                 isAbilityLoaded = true;
             }
         }
     }
+    public void CheckActive()
+    {
+        if (shouldCheckActive)
+        {
+            beatsLeftActive--;
 
+            abilityButton.Set(1 - GetFillRatioActive(), false);
+
+            if (beatsLeftActive == 0)
+            {
+                abilityActivated = false;
+
+                shouldCheckActive = false;
+
+                DeactivateAbility();
+
+                Load();
+            }
+        }
+    }
     public void Update()
     {
         if (!abilityActivated)
@@ -53,34 +78,31 @@ public abstract class Ability : MonoBehaviour
 
                 ActivateAbility();
 
-                abilityButton.Set(1);
+                shouldCheckLoading = false;
 
-                StartCoroutine(AbilityTimer());
+                beatsLeftActive = beatsActive;
+
+                shouldCheckActive = true;
             }
         }
     }
-    public IEnumerator AbilityTimer()
-    {
-        shouldCheckLoading = false;
-
-        yield return new WaitForSeconds(duration);
-
-        abilityActivated = false;
-
-        DeactivateAbility();
-
-        Load();
-    }
     public void Load()
     {
-        beatsLeft = loadBeats;
+        beatsLeftLoad = loadBeats;
 
         shouldCheckLoading = true;
     }
-    private int beatsLeft;
+    private int beatsLeftLoad;
 
-    public float GetFillRatio()
+    private int beatsLeftActive;
+
+    public float GetFillRatioLoad()
     {
-        return (float)beatsLeft / (float)loadBeats;
+        return (float)beatsLeftLoad / (float)loadBeats;
+    }
+
+    public float GetFillRatioActive()
+    {
+        return (float)beatsLeftActive / (float)beatsActive;
     }
 }

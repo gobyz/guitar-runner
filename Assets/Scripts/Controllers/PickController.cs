@@ -32,6 +32,8 @@ public class PickController : MonoBehaviour
     public UnityEvent moveUp = new UnityEvent();
 
     public UnityEvent moveDown = new UnityEvent();
+
+    public GameObject shield;
     private void Start()
     {
         instance = this;
@@ -200,10 +202,11 @@ public class PickController : MonoBehaviour
     }
     public void ImmunityEffectOn()
     {
-        pickSpriteRenderer.color = pickSpriteRenderer.color * new Vector4(1,1,1,0.5f);
+        shield.SetActive(true);
+
     }
     public void ImmunityEffectOff()
-    {
-        pickSpriteRenderer.color = new Vector4(pickSpriteRenderer.color.r, pickSpriteRenderer.color.g, pickSpriteRenderer.color.b, 1);
+    { 
+        shield.SetActive(false);
     }
 }

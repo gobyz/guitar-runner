@@ -15,6 +15,8 @@ public class AudioController : MonoBehaviour
     public static AudioSource licks;
 
     public static UnityEvent beat = new UnityEvent();
+
+    public bool isPaused;
     private void Start()
     {
         licks = transform.GetChild(0).GetComponent<AudioSource>();
@@ -32,9 +34,11 @@ public class AudioController : MonoBehaviour
 
     public void Beat()
     {
-        beat.Invoke();
+        if (!isPaused)
+        {
+            beat.Invoke();
+        }
     }
-
 }
 
 [System.Serializable]

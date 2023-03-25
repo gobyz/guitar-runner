@@ -6,21 +6,7 @@ public class EvilNote : Entity
 {
     public float damage;
 
-    public Vector2 startVelocity;
-
-    public Vector2 velocity;
-
-    public Rigidbody2D rb;
-
     public CircleCollider2D circleCollider;
-    private void Start()
-    {
-        velocity = startVelocity;
-    }
-    private void FixedUpdate()
-    {
-        rb.velocity = velocity * Time.fixedDeltaTime;
-    }
     public void Damage()
     {
         Player.instance.Damage(damage);
