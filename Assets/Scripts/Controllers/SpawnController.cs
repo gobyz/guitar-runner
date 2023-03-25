@@ -7,19 +7,16 @@ public class SpawnController : MonoBehaviour
 {
     public List<Pool> pools = new List<Pool>();
 
-    public Pool goodNotesPool;
-
-    public Pool evilNotesPool;
-
-    public Pool evilNotesJumpingPool;
-
-    public Pool goodNotesJumpingPool;
-
     public GuitarString[] strings;
 
     private Transform spawn;
 
     private GuitarString lastGoodNoteGuitarString;
+
+    private void Start()
+    {
+        AudioController.beat.AddListener(Spawn);
+    }
     public void Spawn()
     {
         if (ShouldSpawn())
@@ -95,6 +92,27 @@ public class SpawnController : MonoBehaviour
             spawn = gs.spawnCenter;
         }
 
+        if (pool.prefab.GetComponent<Entity>() is Heal)
+        {
+            gs = GetRandomString();
+
+            spawn = gs.GetSpawn();
+        }
+
+        if (pool.prefab.GetComponent<Entity>() is Score)
+        {
+            gs = GetRandomString();
+
+            spawn = gs.GetSpawn();
+        }
+
+        if (pool.prefab.GetComponent<Entity>() is Lick)
+        {
+            gs = GetRandomString();
+
+            spawn = gs.GetSpawn();
+        }
+
         SetIsFlipped(e, spawn.name);
 
         e.guitarString = gs;
@@ -168,34 +186,3 @@ public class SpawnController : MonoBehaviour
         }
     }
 }
-
-
-
-/*int random = Random.Range(0, 2);
-
-       if(random == 0)
-       {
-           random = Random.Range(0, 5);
-
-           if (random != 4) // 20% good jumping spawn
-           {
-               return goodNotesPool;
-           }
-           else
-           {
-               return goodNotesJumpingPool;
-           }
-       }
-       else
-       {
-           random = Random.Range(0, 5);
-
-           if(random != 4) // 20% evil jumping spawn
-           {
-               return evilNotesPool;
-           }
-           else
-           {
-               return evilNotesJumpingPool;
-           }
-       }*/

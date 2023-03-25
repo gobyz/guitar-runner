@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3055072456826645940
 Transform:
   m_ObjectHideFlags: 0
@@ -99,6 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb56a862dbcd3644da4aa82c87c823a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAvailable: 0
+  isFlipped: 0
+  guitarString: {fileID: 0}
+  damage: 2
+  damagedPlayer: 0
 --- !u!61 &6472481700177845258
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -109,7 +114,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -123,7 +128,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.24, y: 10.24}
+  m_Size: {x: 9.296344, y: 9.296344}
   m_EdgeRadius: 0
 --- !u!114 &6758795356281679570
 MonoBehaviour:
@@ -265,7 +270,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3055072457212443233
 Transform:
   m_ObjectHideFlags: 0
@@ -345,6 +350,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb56a862dbcd3644da4aa82c87c823a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAvailable: 0
+  isFlipped: 0
+  guitarString: {fileID: 0}
+  damage: 2
+  damagedPlayer: 0
 --- !u!61 &3825968354642530880
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -355,7 +365,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -369,7 +379,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.24, y: 10.24}
+  m_Size: {x: 9.296344, y: 9.296344}
   m_EdgeRadius: 0
 --- !u!114 &8476068908750783374
 MonoBehaviour:
@@ -405,7 +415,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3055072457529076344
 Transform:
   m_ObjectHideFlags: 0
@@ -485,6 +495,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb56a862dbcd3644da4aa82c87c823a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAvailable: 0
+  isFlipped: 0
+  guitarString: {fileID: 0}
+  damage: 2
+  damagedPlayer: 0
 --- !u!61 &8058438405284272312
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -495,7 +510,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -509,7 +524,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.24, y: 10.24}
+  m_Size: {x: 9.296344, y: 9.296344}
   m_EdgeRadius: 0
 --- !u!114 &463518974034677460
 MonoBehaviour:

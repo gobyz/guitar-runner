@@ -12,7 +12,13 @@ public class AudioController : MonoBehaviour
 
     [SerializeField] private Intervals[] intervals;
 
+    public static AudioSource licks;
+
     public static UnityEvent beat = new UnityEvent();
+    private void Start()
+    {
+        licks = transform.GetChild(0).GetComponent<AudioSource>();
+    }
 
     private void Update()
     {

@@ -97,8 +97,18 @@ public class Chord : Entity
 
         gameObject.SetActive(false);
 
+        MakeChordPartsAvailable();
+
         isAvailable = true;
     }
+    public void MakeChordPartsAvailable()
+    {
+        foreach(ChordPart cp in chordParts)
+        {
+            cp.MakeAvailable();
+        }
+    }
+
     private void FixedUpdate()
     {
         rb.velocity = velocity * Time.fixedDeltaTime;

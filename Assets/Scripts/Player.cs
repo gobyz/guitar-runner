@@ -9,14 +9,23 @@ public class Player : MonoBehaviour
 
     public static Player instance;
 
-    [SerializeField]
+    public float maxHealth;
+
     public float health;
 
+    public float score;
+
     public UnityEvent playerDied = new UnityEvent();
+
+    public UnityEvent playerDamaged = new UnityEvent();
 
     private void Start()
     {
         instance = this;
+
+        health = maxHealth;
+
+        score = 0;
     }
 
     public void Damage(float damage)
@@ -24,6 +33,8 @@ public class Player : MonoBehaviour
         if (!isImmuneToDamage)
         {
             health -= damage;
+
+            playerDamaged.Invoke();
 
             IsPlayerDead();
         }
@@ -42,4 +53,20 @@ public class Player : MonoBehaviour
             return false;
         }
     }
+
+    public void AddToScore(float toAdd)
+    {
+        score += toAdd;
+    }
+
+    public void Heal(float value) 
+    { 
+        health += value;
+
+        if(health > maxHealth)
+        {
+            health = maxHealth;
+        }
+    }
+
 }

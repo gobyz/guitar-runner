@@ -154,17 +154,39 @@ public class PickController : MonoBehaviour
     {
         if (pickTrigger.currentEntity != null)
         {
-            if (pickTrigger.currentEntity is IDamagable)
-            {
-                IDamagable damagable = (IDamagable)pickTrigger.currentEntity;
-
-                damagable.Damage();
-            }
             if(pickTrigger.currentEntity is EvilNote)
             {
                 EvilNote evilNote = (EvilNote)pickTrigger.currentEntity;
 
+                evilNote.Damage();
+
                 evilNote.Detach();
+            }
+            if (pickTrigger.currentEntity is ChordPart)
+            {
+                ChordPart chordPart = (ChordPart)pickTrigger.currentEntity;
+
+                chordPart.Damage();
+            }
+            if (pickTrigger.currentEntity is Heal)
+            {
+                Heal heal = (Heal)pickTrigger.currentEntity;
+
+                heal.HealPlayer();
+            }
+
+            if (pickTrigger.currentEntity is Score)
+            {
+                Score score = (Score)pickTrigger.currentEntity;
+
+                score.AddToScore();
+            }
+
+            if (pickTrigger.currentEntity is Lick)
+            {
+                Lick lick = (Lick)pickTrigger.currentEntity;
+
+                lick.Play();
             }
         }
     }

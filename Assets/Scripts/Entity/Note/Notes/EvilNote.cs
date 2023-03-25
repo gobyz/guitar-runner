@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EvilNote : Entity, IDamagable
+public class EvilNote : Entity
 {
     public float damage;
 
@@ -25,6 +25,11 @@ public class EvilNote : Entity, IDamagable
     {
         Player.instance.Damage(damage);
     }
+    public void Detach()
+    {
+        LeanTween.moveY(gameObject, -7, 2f);
+    }
+
     override
     public void MakeAvailable()
     {
@@ -38,10 +43,7 @@ public class EvilNote : Entity, IDamagable
 
         isAvailable = true;
     }
-    public void Detach()
-    {
-        LeanTween.moveY(gameObject, -7, 2f);
-    }
+
 }
 
 
