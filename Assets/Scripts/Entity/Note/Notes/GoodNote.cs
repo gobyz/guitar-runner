@@ -7,10 +7,10 @@ public class GoodNote : Entity, IPickable
 
     public CircleCollider2D circleCollider;
 
-    private bool picked;
+    private bool isPicked;
     public void OnPick()
     {
-        velocity = Vector2.zero;
+        Player.instance.AddToScore(1);
 
         animator.SetTrigger("fly");
 
@@ -18,14 +18,18 @@ public class GoodNote : Entity, IPickable
     }
     public void Pick()
     {
-        if(!picked)
+        if(!isPicked)
         {
             OnPick();
+
+            isPicked = true;
         }
     }
     override
     public void MakeAvailable()
     {
+        isPicked = false;
+
         animator.Play("good-note");
 
         transform.localScale = Vector2.one;

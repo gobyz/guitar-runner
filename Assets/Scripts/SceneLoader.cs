@@ -10,9 +10,7 @@ public class SceneLoader : MonoBehaviour
     public int sceneIndex;
     void Start()
     {
-        StartCoroutine(LoadYourAsyncScene());
-
-        async.allowSceneActivation = false;
+        StartCoroutine(LoadYourAsyncScene());  
     }
     public void PlayScene()
     {
@@ -21,6 +19,8 @@ public class SceneLoader : MonoBehaviour
     public IEnumerator LoadYourAsyncScene()
     {
         async = SceneManager.LoadSceneAsync(sceneIndex);
+
+        async.allowSceneActivation = false;
 
         while (!async.isDone)
         {

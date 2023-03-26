@@ -13,6 +13,8 @@ public class PickController : MonoBehaviour
 
     public PickTrigger pickTrigger;
 
+    public AudioSource pickSource;
+
     public SpriteRenderer pickSpriteRenderer;
 
     public List<GuitarString> strings = new List<GuitarString>();
@@ -168,7 +170,7 @@ public class PickController : MonoBehaviour
             {
                 ChordPart chordPart = (ChordPart)pickTrigger.currentEntity;
 
-                chordPart.Damage();
+                chordPart.Damage();               
             }
             if (pickTrigger.currentEntity is Heal)
             {
@@ -189,6 +191,11 @@ public class PickController : MonoBehaviour
                 Lick lick = (Lick)pickTrigger.currentEntity;
 
                 lick.Play();
+            }
+
+            if (pickTrigger.currentEntity is not GoodNote && pickTrigger.currentEntity is not Chord)
+            {
+                pickSource.Play();
             }
         }
     }

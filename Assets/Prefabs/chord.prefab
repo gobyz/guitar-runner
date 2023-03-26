@@ -103,8 +103,8 @@ MonoBehaviour:
   isAvailable: 0
   isFlipped: 0
   guitarString: {fileID: 0}
-  startVelocity: {x: 0, y: 0}
-  velocity: {x: 0, y: 0}
+  startVelocity: {x: -90.2, y: 0}
+  velocity: {x: -90.2, y: 0}
   rb: {fileID: 3118478335319812858}
   damage: 2
   damagedPlayer: 0
@@ -146,8 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84633e0399118364eab2aa99840854b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultScale: 0.05
-  pulseScale: 0.07
+  pulseScale: 1.1
   time: 0.5
 --- !u!50 &3118478335319812858
 Rigidbody2D:
@@ -379,8 +378,8 @@ MonoBehaviour:
   isAvailable: 0
   isFlipped: 0
   guitarString: {fileID: 0}
-  startVelocity: {x: 0, y: 0}
-  velocity: {x: 0, y: 0}
+  startVelocity: {x: -90.2, y: 0}
+  velocity: {x: -90.2, y: 0}
   rb: {fileID: 8552442800573736278}
   damage: 2
   damagedPlayer: 0
@@ -422,8 +421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84633e0399118364eab2aa99840854b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultScale: 0.05
-  pulseScale: 0.07
+  pulseScale: 1.1
   time: 0.5
 --- !u!50 &8552442800573736278
 Rigidbody2D:
@@ -549,8 +547,8 @@ MonoBehaviour:
   isAvailable: 0
   isFlipped: 0
   guitarString: {fileID: 0}
-  startVelocity: {x: 0, y: 0}
-  velocity: {x: 0, y: 0}
+  startVelocity: {x: -90.2, y: 0}
+  velocity: {x: -90.2, y: 0}
   rb: {fileID: 5894469158877907041}
   damage: 2
   damagedPlayer: 0
@@ -592,8 +590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84633e0399118364eab2aa99840854b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultScale: 0.05
-  pulseScale: 0.07
+  pulseScale: 1.1
   time: 0.5
 --- !u!50 &5894469158877907041
 Rigidbody2D:

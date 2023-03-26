@@ -7,9 +7,16 @@ public class EvilNote : Entity
     public float damage;
 
     public CircleCollider2D circleCollider;
+
+    private bool isDetached;
     public void Damage()
     {
-        Player.instance.Damage(damage);
+        if (!isDetached)
+        {
+            Player.instance.Damage(damage);
+
+            isDetached = true;
+        }
     }
     public void Detach()
     {
@@ -19,6 +26,8 @@ public class EvilNote : Entity
     override
     public void MakeAvailable()
     {
+        isDetached = false;
+
         transform.localScale = Vector2.one;
 
         velocity = startVelocity;

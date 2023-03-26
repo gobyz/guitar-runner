@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,6 +16,10 @@ public class Player : MonoBehaviour
 
     public float score;
 
+    public TMP_Text healthText;
+
+    public TMP_Text scoreText;
+
     public UnityEvent playerDied = new UnityEvent();
 
     public UnityEvent playerDamaged = new UnityEvent();
@@ -26,6 +31,10 @@ public class Player : MonoBehaviour
         health = maxHealth;
 
         score = 0;
+
+        SetHealthUI();
+
+        SetScoreUI();
     }
 
     public void Damage(float damage)
@@ -33,6 +42,8 @@ public class Player : MonoBehaviour
         if (!isImmuneToDamage)
         {
             health -= damage;
+
+            SetHealthUI();
 
             playerDamaged.Invoke();
 
@@ -57,6 +68,8 @@ public class Player : MonoBehaviour
     public void AddToScore(float toAdd)
     {
         score += toAdd;
+
+        SetScoreUI();
     }
 
     public void Heal(float value) 
@@ -67,6 +80,18 @@ public class Player : MonoBehaviour
         {
             health = maxHealth;
         }
+
+        SetHealthUI();
+    }
+
+    public void SetHealthUI()
+    {
+        healthText.text = health.ToString();
+    }
+
+    public void SetScoreUI()
+    {
+        scoreText.text = score.ToString();
     }
 
 }

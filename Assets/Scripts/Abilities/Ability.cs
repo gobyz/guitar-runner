@@ -12,8 +12,6 @@ public abstract class Ability : MonoBehaviour
 
     public bool isAbilityLoaded;
 
-    public float duration;
-
     public KeyCode keycode;
 
     public bool abilityActivated;
@@ -70,7 +68,7 @@ public abstract class Ability : MonoBehaviour
     {
         if (!abilityActivated)
         {
-            if(Input.GetKeyDown(keycode) && isAbilityLoaded)
+            if(Input.GetKeyDown(keycode) && isAbilityLoaded && !PauseController.isPaused)
             {
                 abilityActivated = true;
 

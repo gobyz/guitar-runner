@@ -62,7 +62,6 @@ public class GuitarString : MonoBehaviour
 
         Animate();
     }
-
     public IEnumerator AnimateStringCoroutine()
     {
         Coroutine drawCoroutine = StartCoroutine(Draw());

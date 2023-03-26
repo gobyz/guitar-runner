@@ -23,6 +23,4 @@ public class PickTrigger : MonoBehaviour
 
         triggerExited.Invoke();
     }
-
-
 }

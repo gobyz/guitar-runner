@@ -17,6 +17,15 @@ public class AudioController : MonoBehaviour
     public static UnityEvent beat = new UnityEvent();
 
     public bool isPaused;
+
+    public List<AudioSource> audioSources = new List<AudioSource>();
+    private void Awake()
+    {
+        foreach (AudioSource source in audioSources)
+        {
+            source.mute = Settings.isMuted;
+        }
+    }
     private void Start()
     {
         licks = transform.GetChild(0).GetComponent<AudioSource>();

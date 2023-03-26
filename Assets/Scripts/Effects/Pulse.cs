@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Pulse : MonoBehaviour
 {
-    public float defaultScale;
-
     public float pulseScale;
 
     public float time;
@@ -17,8 +15,10 @@ public class Pulse : MonoBehaviour
 
     public void Play()
     {
-        gameObject.transform.localScale = Vector3.one * pulseScale;
+        Vector2 defaultScale = transform.localScale;
 
-        LeanTween.scale(gameObject, Vector3.one * defaultScale, time);
+        transform.localScale = transform.localScale * pulseScale;
+
+        LeanTween.scale(gameObject, defaultScale, time);
     }
 }
