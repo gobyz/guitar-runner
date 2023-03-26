@@ -102,4 +102,9 @@ public class Chord : Entity
     {
         rb.velocity = velocity * Time.fixedDeltaTime;
     }
+
+    public override void Interact()
+    {
+
+    }
 }

@@ -23,6 +23,13 @@ public class EvilNote : Entity
         LeanTween.moveY(gameObject, -7, 2f);
     }
 
+    public override void Interact()
+    {
+        Damage();
+
+        Detach();
+    }
+
     override
     public void MakeAvailable()
     {

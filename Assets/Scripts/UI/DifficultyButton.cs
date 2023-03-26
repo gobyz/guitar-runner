@@ -15,7 +15,6 @@ public class DifficultyButton : MonoBehaviour
             DifficultyController.instance.SetStartDifficulty();
         }
     }
-
     public void ChangeDifficulty()
     {
         DifficultyController.instance.ChangeDifficulty();

@@ -7,17 +7,15 @@ public class Pulse : MonoBehaviour
     public float pulseScale;
 
     public float time;
-
     private void Start()
     {
         AudioController.beat.AddListener(Play);
     }
-
     public void Play()
     {
         Vector2 defaultScale = transform.localScale;
 
-        transform.localScale = transform.localScale * pulseScale;
+        transform.localScale = defaultScale * pulseScale;
 
         LeanTween.scale(gameObject, defaultScale, time);
     }

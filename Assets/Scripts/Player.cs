@@ -23,7 +23,6 @@ public class Player : MonoBehaviour
     public UnityEvent playerDied = new UnityEvent();
 
     public UnityEvent playerDamaged = new UnityEvent();
-
     private void Start()
     {
         instance = this;
@@ -36,7 +35,6 @@ public class Player : MonoBehaviour
 
         SetScoreUI();
     }
-
     public void Damage(float damage)
     {
         if (!isImmuneToDamage)
@@ -50,7 +48,6 @@ public class Player : MonoBehaviour
             IsPlayerDead();
         }
     }
-
     public bool IsPlayerDead()
     {
         if(health <= 0)
@@ -64,14 +61,12 @@ public class Player : MonoBehaviour
             return false;
         }
     }
-
     public void AddToScore(float toAdd)
     {
         score += toAdd;
 
         SetScoreUI();
     }
-
     public void Heal(float value) 
     { 
         health += value;
@@ -79,6 +74,10 @@ public class Player : MonoBehaviour
         if(health > maxHealth)
         {
             health = maxHealth;
+        }
+        else if(health < 0)
+        {
+            health = 0;
         }
 
         SetHealthUI();
@@ -88,10 +87,8 @@ public class Player : MonoBehaviour
     {
         healthText.text = health.ToString();
     }
-
     public void SetScoreUI()
     {
         scoreText.text = score.ToString();
     }
-
 }

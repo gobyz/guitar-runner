@@ -27,7 +27,6 @@ public class SceneLoader : MonoBehaviour
             yield return null;
         }
     }
-
     public void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

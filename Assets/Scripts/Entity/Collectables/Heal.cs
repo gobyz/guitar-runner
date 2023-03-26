@@ -14,4 +14,8 @@ public class Heal : Collectable
 
         MakeAvailable();
     }
+    public override void Interact()
+    {
+        HealPlayer();
+    }
 }

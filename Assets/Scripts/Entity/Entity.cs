@@ -8,14 +8,16 @@ public abstract class Entity : MonoBehaviour
 
     public bool isFlipped;
 
-    public GuitarString guitarString;
-    public abstract void MakeAvailable();
-
     public Vector2 startVelocity;
-
+    [HideInInspector]
     public Vector2 velocity;
 
     public Rigidbody2D rb;
+
+    public GuitarString guitarString;
+    public abstract void MakeAvailable();
+    public abstract void Interact();
+
     private void Start()
     {
         velocity = startVelocity;

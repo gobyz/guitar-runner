@@ -13,4 +13,9 @@ public class Score : Collectable
 
         MakeAvailable();
     }
+
+    public override void Interact()
+    {
+        AddToScore();
+    }
 }

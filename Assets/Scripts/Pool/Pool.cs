@@ -15,7 +15,6 @@ public class Pool : MonoBehaviour
     {
        InitiatePool();
     }
-
     public void InitiatePool()
     {
         for(int i = 0; i < size; i++)
@@ -31,20 +30,10 @@ public class Pool : MonoBehaviour
             entities.Add(e);
         }
     }
-
     public Entity GetEntity()
     {
-        foreach(Entity e in entities)
-        {
-            if (e.isAvailable)
-            {
-                return e;
-            }
-        }
-
-        return null;
+        return entities.Find(e => e.isAvailable);
     }
-
     public bool IsPoolEmpty()
     {
         foreach (Entity e in entities)
@@ -54,7 +43,6 @@ public class Pool : MonoBehaviour
                 return false;
             }
         }
-
         return true;
     }
 }

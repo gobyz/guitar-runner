@@ -65,4 +65,9 @@ public class GoodNote : Entity, IPickable
 
         yield return new WaitForSeconds(0.2f);
     }
+
+    public override void Interact()
+    {
+        
+    }
 }

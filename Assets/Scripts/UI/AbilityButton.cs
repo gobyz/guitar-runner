@@ -15,32 +15,30 @@ public class AbilityButton : MonoBehaviour
     public Color activeColor;
 
     public Image keyImage;
-
     public void Set(float fillRatio, bool isLoading)
     {
         fill.fillAmount = 1 - fillRatio;
 
         if (fill.fillAmount == 1)
         {
-            fill.color = availableColor;
-
-            keyImage.color = availableColor;
+            SetColor(availableColor);
         }
-
         else
         {
             if(isLoading)
             {
-                fill.color = loadingColor;
-
-                keyImage.color = loadingColor;
+                SetColor(loadingColor);
             }
             else
             {
-                fill.color = activeColor;
-
-                keyImage.color = activeColor;
+                SetColor(activeColor);
             }
         }
+    }
+    public void SetColor(Color color)
+    {
+        fill.color = color;
+
+        keyImage.color = color;
     }
 }

@@ -188,8 +188,5 @@ MonoBehaviour:
   startVelocity: {x: -90.2, y: 0}
   velocity: {x: -90.2, y: 0}
   rb: {fileID: 7555551926616150526}
-  healValue: 5
-  scoreValue: 5
-  licks:
-  - {fileID: 8300000, guid: ce0df27fa53554347b932503255de9ce, type: 3}
-  - {fileID: 8300000, guid: ce0df27fa53554347b932503255de9ce, type: 3}
+  healValue: 1
+  scoreValue: 10

@@ -49,7 +49,6 @@ public class SpawnController : MonoBehaviour
             }
         }    
     }
-
     public GameObject GetRandomObject(Pool pool)
     {
         Entity e;
@@ -63,64 +62,24 @@ public class SpawnController : MonoBehaviour
             return null;
         }
 
-        GuitarString gs = null;
+        GuitarString gs = GetRandomString();
+
+        spawn = gs.GetSpawn();
 
         e.isAvailable = false;
 
-        if (pool.prefab.GetComponent<Entity>() is GoodNote)
-        {        
-            if (lastGoodNoteGuitarString == null)
-            {
-                gs = GetRandomString();
-
-                lastGoodNoteGuitarString = gs;
-
-                spawn = gs.GetSpawn();
-            }
-            else
+        if (e is GoodNote)
+        {
+            if (lastGoodNoteGuitarString != null)
             {
                 gs = GetCloseGuitarString(lastGoodNoteGuitarString);
-
-                spawn = gs.GetSpawn();
-
-                lastGoodNoteGuitarString = gs;
             }
 
-            SetIsFlipped(e, spawn.name);
+            lastGoodNoteGuitarString = gs;
         }
-        else if(pool.prefab.GetComponent<Entity>() is EvilNote)
+        if (e is Chord)
         {
-            gs = GetRandomString();
-
-            spawn = gs.GetSpawn();        
-        }
-     
-        if (pool.prefab.GetComponent<Entity>() is Chord)
-        {
-            gs = GetRandomString();
-
-            spawn = gs.spawnCenter;
-        }
-
-        if (pool.prefab.GetComponent<Entity>() is Heal)
-        {
-            gs = GetRandomString();
-
-            spawn = gs.GetSpawn();
-        }
-
-        if (pool.prefab.GetComponent<Entity>() is Score)
-        {
-            gs = GetRandomString();
-
-            spawn = gs.GetSpawn();
-        }
-
-        if (pool.prefab.GetComponent<Entity>() is Lick)
-        {
-            gs = GetRandomString();
-
-            spawn = gs.GetSpawn();
+            spawn = GetRandomString().spawnCenter;
         }
 
         SetIsFlipped(e, spawn.name);
@@ -178,20 +137,25 @@ public class SpawnController : MonoBehaviour
                 return pools[i];
             }
         }
-
         return GetRandomPool();
     }
 
     public static void Shuffle(List<Pool> list)
     {
         System.Random rng = new System.Random();
+
         int n = list.Count;
+
         while (n > 1)
         {
             n--;
+
             int k = rng.Next(n + 1);
+
             Pool value = list[k];
+
             list[k] = list[n];
+
             list[n] = value;
         }
     }

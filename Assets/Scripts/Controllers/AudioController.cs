@@ -12,8 +12,6 @@ public class AudioController : MonoBehaviour
 
     [SerializeField] private Intervals[] intervals;
 
-    public static AudioSource licks;
-
     public static UnityEvent beat = new UnityEvent();
 
     public bool isPaused;
@@ -25,10 +23,6 @@ public class AudioController : MonoBehaviour
         {
             source.mute = Settings.isMuted;
         }
-    }
-    private void Start()
-    {
-        licks = transform.GetChild(0).GetComponent<AudioSource>();
     }
 
     private void Update()

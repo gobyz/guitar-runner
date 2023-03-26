@@ -43,8 +43,6 @@ public class PickController : MonoBehaviour
         SetCurrentGuitarString(startStringIndex);
 
         pickTrigger.triggerEntered.AddListener(PickOnTriggerEnter);
-
-        pickTrigger.triggerExited.AddListener(PickOnTriggerExit);
     }
     private void SetCurrentGuitarString(int index)
     {
@@ -136,7 +134,10 @@ public class PickController : MonoBehaviour
     public Detach detach;
     public void PickString()
     {
-        detach.DetachAll();
+        if (detach.abilityActivated)
+        {
+            detach.DetachAll();
+        }
 
         if (pickTrigger.currentEntity != null)
         {
@@ -156,52 +157,12 @@ public class PickController : MonoBehaviour
     }
     public void PickOnTriggerEnter()
     {
-        if (pickTrigger.currentEntity != null)
+        if (pickTrigger.currentEntity is not GoodNote && pickTrigger.currentEntity is not Chord)
         {
-            if(pickTrigger.currentEntity is EvilNote)
-            {
-                EvilNote evilNote = (EvilNote)pickTrigger.currentEntity;
+            pickTrigger.currentEntity.Interact();
 
-                evilNote.Damage();
-
-                evilNote.Detach();
-            }
-            if (pickTrigger.currentEntity is ChordPart)
-            {
-                ChordPart chordPart = (ChordPart)pickTrigger.currentEntity;
-
-                chordPart.Damage();               
-            }
-            if (pickTrigger.currentEntity is Heal)
-            {
-                Heal heal = (Heal)pickTrigger.currentEntity;
-
-                heal.HealPlayer();
-            }
-
-            if (pickTrigger.currentEntity is Score)
-            {
-                Score score = (Score)pickTrigger.currentEntity;
-
-                score.AddToScore();
-            }
-
-            if (pickTrigger.currentEntity is Lick)
-            {
-                Lick lick = (Lick)pickTrigger.currentEntity;
-
-                lick.Play();
-            }
-
-            if (pickTrigger.currentEntity is not GoodNote && pickTrigger.currentEntity is not Chord)
-            {
-                pickSource.Play();
-            }
+            pickSource.Play();
         }
-    }
-    public void PickOnTriggerExit()
-    {
-        
     }
     public GuitarString GetCurrentGuitarString()
     {

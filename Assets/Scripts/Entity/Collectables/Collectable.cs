@@ -4,7 +4,12 @@ using UnityEngine;
 using static UnityEngine.EventSystems.EventTrigger;
 
 public class Collectable : Entity
-{   
+{
+    public override void Interact()
+    {
+
+    }
+
     public override void MakeAvailable()
     {
         if (isFlipped)

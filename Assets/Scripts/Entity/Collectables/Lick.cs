@@ -17,4 +17,8 @@ public class Lick : Collectable
 
         MakeAvailable();
     }
+    public override void Interact()
+    {
+        Play();
+    }
 }

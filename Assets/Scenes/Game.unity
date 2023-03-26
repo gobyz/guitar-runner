@@ -966,7 +966,7 @@ GameObject:
   - component: {fileID: 210711458}
   - component: {fileID: 210711457}
   m_Layer: 5
-  m_Name: Image
+  m_Name: horn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2359,7 +2359,7 @@ GameObject:
   - component: {fileID: 451825575}
   - component: {fileID: 451825576}
   m_Layer: 5
-  m_Name: info
+  m_Name: layout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3211,7 +3211,7 @@ GameObject:
   - component: {fileID: 550893555}
   - component: {fileID: 550893554}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: horn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4310,7 +4310,7 @@ GameObject:
   - component: {fileID: 677069650}
   - component: {fileID: 677069649}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: halo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4663,7 +4663,7 @@ GameObject:
   - component: {fileID: 738129426}
   - component: {fileID: 738129427}
   m_Layer: 0
-  m_Name: music-key (1)
+  m_Name: musickey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5308,7 +5308,7 @@ GameObject:
   - component: {fileID: 840480455}
   - component: {fileID: 840480456}
   m_Layer: 5
-  m_Name: movement
+  m_Name: layout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5567,7 +5567,7 @@ GameObject:
   - component: {fileID: 937980896}
   - component: {fileID: 937980895}
   m_Layer: 5
-  m_Name: title
+  m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5842,7 +5842,7 @@ GameObject:
   - component: {fileID: 987439689}
   - component: {fileID: 987439688}
   m_Layer: 5
-  m_Name: tab
+  m_Name: title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5932,7 +5932,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1020718389}
   m_Layer: 5
-  m_Name: info
+  m_Name: buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6313,7 +6313,7 @@ GameObject:
   - component: {fileID: 1089556703}
   - component: {fileID: 1089556702}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: x
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6712,7 +6712,7 @@ GameObject:
   - component: {fileID: 1198828708}
   - component: {fileID: 1198828707}
   m_Layer: 5
-  m_Name: title
+  m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12841,7 +12841,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1361747539}
   m_Layer: 5
-  m_Name: info
+  m_Name: buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12881,7 +12881,7 @@ GameObject:
   - component: {fileID: 1368429132}
   - component: {fileID: 1368429131}
   m_Layer: 5
-  m_Name: title
+  m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13956,7 +13956,7 @@ GameObject:
   - component: {fileID: 1530273920}
   - component: {fileID: 1530273919}
   m_Layer: 5
-  m_Name: Image
+  m_Name: halo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14063,7 +14063,7 @@ GameObject:
   - component: {fileID: 1544138944}
   - component: {fileID: 1544138943}
   m_Layer: 5
-  m_Name: title
+  m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14788,7 +14788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 3055072457095081440, guid: ea96e8bfd7dee0c488e73bec9b6f5dc2, type: 3}
   entities: []
-  spawnRate: 0.2
+  spawnRate: 0.25
   size: 3
 --- !u!1 &1711031761
 GameObject:
@@ -15289,7 +15289,7 @@ GameObject:
   - component: {fileID: 1838858706}
   - component: {fileID: 1838858705}
   m_Layer: 5
-  m_Name: icon (1)
+  m_Name: icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15364,7 +15364,7 @@ GameObject:
   - component: {fileID: 1849713901}
   - component: {fileID: 1849713902}
   m_Layer: 0
-  m_Name: music-key
+  m_Name: musickey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15437,134 +15437,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1874900158
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1874900159}
-  - component: {fileID: 1874900160}
-  m_Layer: 0
-  m_Name: licks
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1874900159
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1874900158}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2022721140}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1874900160
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1874900158}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &1885429801
 GameObject:
   m_ObjectHideFlags: 0
@@ -15975,7 +15847,7 @@ GameObject:
   - component: {fileID: 1951381578}
   - component: {fileID: 1951381577}
   m_Layer: 5
-  m_Name: tab
+  m_Name: title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16620,8 +16492,7 @@ Transform:
   m_LocalPosition: {x: -14.440001, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1874900159}
+  m_Children: []
   m_Father: {fileID: 1964204740}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16762,7 +16633,6 @@ MonoBehaviour:
   - {fileID: 353758864}
   - {fileID: 2022721141}
   - {fileID: 1466722174}
-  - {fileID: 1874900160}
   - {fileID: 564821981}
 --- !u!1 &2028234923
 GameObject:

@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 4096
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 15b429100e1d43745a8ca2c243c4c5dd, type: 3}
+    - {fileID: 102900000, guid: 12da283c8effa4042b024b0ecf26bceb, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 098523506ca88e840a52e0f57c99f91e, type: 3}
+  - {fileID: 21300000, guid: affcb8c1991b7684b810bd1b66544ff5, type: 3}
+  - {fileID: 21300000, guid: d029faf15bb48304d866cd9f7f6f8577, type: 3}
+  - {fileID: 21300000, guid: 655d1752be75a1a429c9a675150d718b, type: 3}
+  - {fileID: 21300000, guid: 6e481f6351e70474ab843d3d485c6ced, type: 3}
+  - {fileID: 21300000, guid: b1f48ef3c05009345a26355b305b5a34, type: 3}
+  - {fileID: 21300000, guid: 29942e648e915c74e8a69d0e82accbe6, type: 3}
+  - {fileID: 21300000, guid: d87f87e4e94353f4488c0bccc867acec, type: 3}
+  - {fileID: 21300000, guid: cf23fbb5d6d5c4340a664f55517680db, type: 3}
+  - {fileID: 21300000, guid: 96c53df62632afd4384b9552baa89269, type: 3}
+  - {fileID: 2084787973, guid: 0e2f2638a0935e14ab910f008fce209f, type: 3}
+  - {fileID: -1835716563, guid: 0e2f2638a0935e14ab910f008fce209f, type: 3}
+  - {fileID: 21300000, guid: 121a2f48b3a31a14a8ca24c75801530a, type: 3}
+  - {fileID: 21300000, guid: d69aaae813e99704da4524e8e0fb2235, type: 3}
+  - {fileID: 21300000, guid: 21c56419f90de61489beacfb8ac6cad5, type: 3}
+  - {fileID: 21300000, guid: 8dc3a159c69d0c949b6c30ebd23da9f6, type: 3}
+  - {fileID: 21300000, guid: 25e836f91c112384c89adca055b1db1a, type: 3}
+  - {fileID: 21300000, guid: 86f146f9f4155b741b664254db86dacf, type: 3}
+  - {fileID: -618414357, guid: 106aa18ba3e731b449a1b8ea55a8c3c4, type: 3}
+  - {fileID: 1719081450, guid: 106aa18ba3e731b449a1b8ea55a8c3c4, type: 3}
+  - {fileID: 72356519, guid: 106aa18ba3e731b449a1b8ea55a8c3c4, type: 3}
+  - {fileID: -1115569195, guid: 6ead1a4cf2b174f4b99d062fdbe694df, type: 3}
+  - {fileID: 374441559, guid: 6ead1a4cf2b174f4b99d062fdbe694df, type: 3}
+  - {fileID: 21300000, guid: 85cc71dc5e464274e9b26d177ccf0866, type: 3}
+  - {fileID: 1183162878, guid: bc816ced10a192846a75ff9f4d7f2d28, type: 3}
+  - {fileID: -1559011493, guid: bc816ced10a192846a75ff9f4d7f2d28, type: 3}
+  - {fileID: 384150224, guid: bc816ced10a192846a75ff9f4d7f2d28, type: 3}
+  - {fileID: -1255036029, guid: bc816ced10a192846a75ff9f4d7f2d28, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - detach
+  - focus
+  - speaker
+  - star
+  - curved
+  - door
+  - arrow
+  - guitarbody
+  - bulb
+  - brush
+  - ascending-descending_1
+  - ascending-descending_0
+  - music
+  - pick
+  - circle
+  - gear
+  - lick
+  - white-square
+  - evil-note_2
+  - evil-note_1
+  - evil-note_0
+  - text_1
+  - text_0
+  - heal
+  - good-note_0
+  - good-note_1
+  - good-note_2
+  - good-note_3
+  m_RenderDataMap: {}
+  m_Tag: atlas
+  m_IsVariant: 0

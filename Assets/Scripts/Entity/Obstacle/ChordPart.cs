@@ -16,6 +16,11 @@ public class ChordPart : Entity
             damagedPlayer = true;
         }
     }
+    public override void Interact()
+    {
+        Damage();
+    }
+
     public override void MakeAvailable()
     {
         damagedPlayer = false;

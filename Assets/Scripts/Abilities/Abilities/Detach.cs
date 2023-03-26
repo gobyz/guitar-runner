@@ -17,8 +17,6 @@ public class Detach : Ability
     }
     public void DetachAll()
     {
-        if (abilityActivated)
-        {
             foreach (Entity entity in evilNotesPool.entities)
             {
                 EvilNote en = (EvilNote)entity;
@@ -45,5 +43,4 @@ public class Detach : Ability
                 }
             }
         }     
-    }
 }

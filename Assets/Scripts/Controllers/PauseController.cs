@@ -9,7 +9,6 @@ public class PauseController : MonoBehaviour
     public AudioController audioController;
 
     private Vector2 velocityOnPause;
-
     public void Pause()
     {
         isPaused = true;
@@ -18,21 +17,49 @@ public class PauseController : MonoBehaviour
         {
             foreach(Entity e in p.entities)
             {
-                StopVelocity(e);
-
-                if (e is Chord)
+                if (!e.isAvailable)
                 {
-                    Chord chord = (Chord)e;
+                    StopVelocity(e);
 
-                    foreach(ChordPart chordPart in chord.chordParts)
+                    if (e is Chord)
                     {
-                        StopVelocity(chordPart);
+                        Chord chord = (Chord)e;
+
+                        foreach (ChordPart chordPart in chord.chordParts)
+                        {
+                            StopVelocity(chordPart);
+                        }
+                    }
+                }          
+            }
+        }
+        audioController.isPaused = true;
+    }
+    public void Unpause()
+    {
+        isPaused = false;
+
+        foreach (Pool p in spawnController.pools)
+        {
+            foreach (Entity e in p.entities)
+            {
+                if (!e.isAvailable)
+                {
+                    ResetVelocity(e);
+
+                    if (e is Chord)
+                    {
+                        Chord chord = (Chord)e;
+
+                        foreach (ChordPart chordPart in chord.chordParts)
+                        {
+                            ResetVelocity(chordPart);
+                        }
                     }
                 }
             }
         }
-
-        audioController.isPaused = true;
+        audioController.isPaused = false;
     }
 
     public void StopVelocity(Entity e)
@@ -45,30 +72,5 @@ public class PauseController : MonoBehaviour
     public void ResetVelocity(Entity e)
     {
         e.velocity = velocityOnPause;
-    }
-
-    public void Unpause()
-    {
-        isPaused = false;
-
-        foreach (Pool p in spawnController.pools)
-        {
-            foreach (Entity e in p.entities)
-            {
-                ResetVelocity(e);
-
-                if (e is Chord)
-                {
-                    Chord chord = (Chord)e;
-
-                    foreach (ChordPart chordPart in chord.chordParts)
-                    {
-                        ResetVelocity(chordPart);
-                    }
-                }
-            }
-        }
-
-        audioController.isPaused = false;
     }
 }

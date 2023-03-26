@@ -55,7 +55,7 @@ public class DifficultyController : MonoBehaviour
         SetDifficultyButton();
     }
 
-    public void SetDifficultyButton()
+    private void SetDifficultyButton()
     {
         difficultyButtonText.text = currentDifficulty.name;
     }
