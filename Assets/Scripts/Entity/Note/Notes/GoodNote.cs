@@ -8,6 +8,8 @@ public class GoodNote : Entity, IPickable
     public CircleCollider2D circleCollider;
 
     private bool isPicked;
+
+    public float damage;
     public void OnPick()
     {
         Player.instance.AddToScore(1);
@@ -28,6 +30,11 @@ public class GoodNote : Entity, IPickable
     override
     public void MakeAvailable()
     {
+        if (!isPicked)
+        {
+            Player.instance.Damage(damage, false);
+        }
+
         isPicked = false;
 
         animator.Play("good-note");

@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
 
         SetScoreUI();
     }
-    public void Damage(float damage)
+    public void Damage(float damage, bool withEffect = true)
     {
         if (!isImmuneToDamage)
         {
@@ -43,7 +43,10 @@ public class Player : MonoBehaviour
 
             SetHealthUI();
 
-            playerDamaged.Invoke();
+            if (withEffect)
+            {
+                playerDamaged.Invoke();
+            }
 
             IsPlayerDead();
         }

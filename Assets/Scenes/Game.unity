@@ -758,7 +758,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  shouldPause: 1
 --- !u!223 &150609504
 Canvas:
   m_ObjectHideFlags: 0
@@ -5250,7 +5249,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  shouldPause: 1
 --- !u!223 &832293211
 Canvas:
   m_ObjectHideFlags: 0
@@ -14788,7 +14786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 3055072457095081440, guid: ea96e8bfd7dee0c488e73bec9b6f5dc2, type: 3}
   entities: []
-  spawnRate: 0.25
+  spawnRate: 0.4
   size: 3
 --- !u!1 &1711031761
 GameObject:

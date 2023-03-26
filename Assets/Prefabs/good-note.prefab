@@ -596,9 +596,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAvailable: 0
   isFlipped: 0
-  guitarString: {fileID: 0}
   startVelocity: {x: -90.2, y: 0}
   velocity: {x: -90.2, y: 0}
-  animator: {fileID: 1733563893539375547}
   rb: {fileID: 4441905105340861671}
+  guitarString: {fileID: 0}
+  animator: {fileID: 1733563893539375547}
   circleCollider: {fileID: 1902076648700130162}
+  damage: 1
