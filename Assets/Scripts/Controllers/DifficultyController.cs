@@ -28,7 +28,11 @@ public class DifficultyController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        SetStartDifficulty();
+    }
 
+    public void SetStartDifficulty()
+    {
         startDifficulty = difficulties[1];
 
         currentDifficulty = startDifficulty;
@@ -54,6 +58,11 @@ public class DifficultyController : MonoBehaviour
     public void SetDifficultyButton()
     {
         difficultyButtonText.text = currentDifficulty.name;
+    }
+
+    public void SetButtonText(TMP_Text tmp_text)
+    {
+        difficultyButtonText = tmp_text;
     }
 }
 
