@@ -1,3 +1,3 @@
 # guitar-runner
 
-An small infinite runner game project. An example of audio sync in Unity.
+A small infinite runner game project. Practicing audio sync in Unity.
